@@ -1,0 +1,13 @@
+Combination sum
+we are given an array and target sum
+we have to print subsets where sum of elements in the subset equals targetsum
+here repetetion of elements is not allowed
+
+ex:
+[1,2,3,1]
+target=5
+
+output:
+
+2,3
+1,3,1

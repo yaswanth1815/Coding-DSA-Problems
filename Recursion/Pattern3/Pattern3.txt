@@ -1,0 +1,16 @@
+All possible substrings of a given string
+ex:
+hell
+
+output:
+
+h
+he
+hel
+hell
+e
+el
+ell
+l
+ll
+l

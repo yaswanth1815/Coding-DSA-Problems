@@ -1,0 +1,4 @@
+Maxuimum subset sum of an array
+Given a target K, is there a subset whose sum is K?
+ex:
+[1,2,3,-3,-4,5,6,8]
