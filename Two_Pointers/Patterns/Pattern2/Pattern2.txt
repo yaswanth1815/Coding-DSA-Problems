@@ -1,0 +1,5 @@
+Longest substring with some condition only positive values
+
+ex:
+[2,5,7,1,4,4,3,2,5]
+sum<=10

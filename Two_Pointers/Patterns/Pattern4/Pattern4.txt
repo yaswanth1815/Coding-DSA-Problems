@@ -1,0 +1,7 @@
+Longest substring without repeating characters
+
+ex:
+ajbhdeadehf
+
+output:
+ajbhde
