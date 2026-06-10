@@ -1,0 +1,29 @@
+git init
+git init folder-name
+
+git add .
+git add filename.ext
+
+git commit -m "message"
+git commit -m "message1" -m "Message2"
+
+git branch -M branch-name
+
+git remote add repo-name repo-link.git
+
+git push -u repo-name branch-name
+
+git status
+
+git log
+
+git diff
+
+git restore filename.txt
+git restore .
+
+git branch 
+
+git remote -v
+
+git rm

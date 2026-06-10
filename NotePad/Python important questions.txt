@@ -1,0 +1,316 @@
+Looping Statements (30 Questions)
+What is enumerate()
+What are generator loops?
+
+Control Flow Statements (20 Questions)
+
+What is yield statement?
+Difference between return and yield?
+What is function flow control?
+What are branching statements?
+What are jumping statements?
+what is recursion flow?
+How does Python execute statements sequentially?
+
+Collections (30 Questions)
+
+What are collections in Python?
+Difference between sort and sorted?
+What are nested collections?
+What is ordered dictionary?
+What are collection methods?
+What is list comprehension?
+What are collection iterators?
+What is defaultdict?
+What is Counter collection?
+
+Regular Expressions (25 Questions)
+
+What is regex?
+Why are regular expressions used?
+What is pattern matching?
+What is finditer()?
+What are metacharacters?
+What are quantifiers?
+What is character class?
+What is raw string?
+What does ? quantifier do?
+What are anchors?
+What is greedy matching?
+What is nongreedy matching?
+How to validate email?
+How to validate mobile number?
+What is escape sequence?
+What are groups in regex?
+What is alternation?
+What are regex flags?
+What are practical uses of regex?
+What are regex limitations?
+
+OOPS (30 Questions)
+
+What is OOP?
+What is class?
+What is object?
+What is constructor?
+What is self?
+What are instance variables?
+What are class variables?
+What are static methods?
+What are class methods?
+What is encapsulation?
+What is inheritance?
+Types of inheritance?
+What is polymorphism?
+What is abstraction?
+What is method overriding?
+What is method overloading?
+What is operator overloading?
+What is super()?
+What is MRO?
+What are magic methods?
+What is duck typing?
+What is association?
+What is aggregation?
+What is composition?
+Difference between composition and inheritance?
+What are abstract classes?
+What is data hiding?
+What are private members?
+Difference between staticmethod and classmethod?
+
+Exception Handling (25 Questions)
+
+What is exception?
+Difference between syntax error and exception?
+What is else block in exceptions?
+What is nested try?
+What is exception hierarchy?
+What are builtin exceptions?
+What is raise statement?
+What are custom exceptions?
+What is assertion?
+Difference between exception and error?
+What happens if exception is unhandled?
+What is traceback?
+Can multiple exceptions be handled?
+Difference between Exception and BaseException?
+What is exception propagation?
+What is resource cleanup?
+Why is finally important?
+What are practical uses of exceptions?
+What is defensive programming?
+What is logging exceptions
+What is failsafe programming?
+
+What are best practices in exception handling?
+
+Functions (30 Questions)
+
+What is anonymous function?
+What are higherorder functions?
+What is closure?
+What is firstclass function?
+What are callback functions?
+What is pure function?
+What is function overloading concept?
+What are decorators?
+What is memoization?
+What is recursion depth?
+Difference between recursion and iteration?
+What is docstring?
+What is function annotation?
+
+File Handling (25 Questions)
+What does write() do?
+What does writelines() do?
+Why use with statement?
+What exceptions occur in file handling?
+What is buffering?
+What are file pointers?
+How are large files handled?
+What are serialization techniques?
+What is pickle module?
+
+Modules and Packages (25 Questions)
+
+What is module?
+What is package?
+Difference between module and package?
+What is import statement?
+What is aliasing?
+What is name variable?
+What is main?
+What are builtin modules?
+What are custom modules?
+What is PYTHONPATH?
+What is package initialization?
+What is init.py?
+How are packages structured?
+What is module caching?
+What is sys.path?
+What are thirdparty modules?
+What are namespace packages?
+What is relative import?
+What is absolute import?
+What are standard libraries?
+What are dependency management tools?
+
+Advanced Strings (25 Questions)
+
+Difference between find and index?
+What does strip() do?
+What does replace() do?
+What are fstrings?
+Difference between format() and fstring?
+What is string concatenation?
+What is string interning?
+What is unicode?
+What are escape sequences?
+What are raw strings?
+What is string formatting?
+What is encoding and decoding?
+Comprehensions (20 Questions)
+What is list comprehension?
+What is set comprehension?
+What is dictionary comprehension?
+What is generator comprehension?
+Difference between comprehension and loop?
+What are nested comprehensions?
+What are conditional comprehensions?
+Which is faster: loop or comprehension?
+What are memory benefits?
+What are readability concerns?
+What is lazy evaluation?
+What are practical uses of comprehensions?
+What is flattening lists?
+Can ifelse be used in comprehensions?
+Difference between generator and list comprehension?
+What are nested loops in comprehensions?
+What are common mistakes in comprehensions?
+What is filtering using comprehensions?
+What is transformation using comprehensions?
+What are best practices for comprehensions?
+
+Lambda Functions (20 Questions)
+
+Why are lambda functions anonymous?
+Difference between lambda and normal function?
+Can lambda have multiple arguments?
+Can lambda have default arguments?
+Can lambda contain loops?
+Can lambda contain multiple expressions?
+What are practical uses of lambda?
+Lambda with sorted() examples?
+What are limitations of lambda?
+What is inline function?
+What is functional programming?
+Difference between lambda and comprehension?
+What are callback functions?
+What are higherorder functions?
+What are readability concerns with lambda?
+When should lambda not be used?
+
+map(), filter(), reduce() (20 Questions)
+
+Difference between map and comprehension?
+Difference between filter and comprehension?
+What are iterable transformations?
+What are predicate functions?
+What are cumulative operations?
+What are lazy iterators?
+Can multiple iterables be used in map?
+What happens if iterable lengths differ?
+What are practical uses of filter?
+Difference between reduce and sum?
+What is functools module?
+What are functional pipelines?
+What are readability concerns?
+What are performance benefits?
+When should comprehensions be preferred?
+
+Decorators and Closures (25 Questions)
+
+What is decorator?
+Why are decorators used?
+How does @decorator syntax work?
+What is wrapper function?
+What are nested decorators?
+What are decorators with arguments?
+What is functools.wraps?
+What are practical uses of decorators?
+What is function metadata?
+What is closure?
+What is lexical scoping?
+What is enclosing scope?
+How are closures stored?
+Difference between closure and class?
+Difference between decorator and closure?
+What is function factory?
+Can closures modify variables?
+What are stateful functions?
+What are callback decorators?
+What are authentication decorators?
+What are timing decorators?
+What are memoization decorators?
+What are logging decorators?
+
+Iterators and Generators (25 Questions)
+
+What is iterable?
+What is iterator?
+Difference between iterable and iterator?
+What does iter() do?
+What does next() do?
+What is StopIteration?
+What is iterator protocol?
+How are custom iterators created?
+What is generator?
+Difference between return and yield?
+What are generator expressions?
+What is lazy evaluation?
+Why are generators memory efficient?
+Difference between generator and iterator?
+Can generators be reused?
+What are coroutine generators?
+What is yield from?
+What are infinite generators?
+What are practical uses of generators?
+Difference between list comprehension and generator expression?
+What are streaming data generators?
+What are stateful iterators?
+What is memory optimization?
+What are iterator chains?
+
+Multithreading and Multiprocessing (30 Questions)
+
+What is thread?
+What is process?
+Difference between thread and process?
+What is multithreading?
+What is multiprocessing?
+What is concurrency?
+What is parallelism?
+What is GIL?
+Why does GIL exist?
+What are IObound tasks?
+What are CPUbound tasks?
+When should threading be used?
+When should multiprocessing be used?
+What is race condition?
+What is deadlock?
+What is synchronization?
+What are locks?
+What are semaphores?
+What are RLocks?
+What is daemon thread?
+What does join() do?
+What is thread safety?
+What is process pool?
+What are queues?
+What is IPC?
+What are shared resources?
+What are thread pools?
+What are multiprocessing pools?
+What are practical uses of threading?
+What are practical uses of multiprocessing?

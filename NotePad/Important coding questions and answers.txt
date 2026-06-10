@@ -1,0 +1,54 @@
+1.Write a program to find the occurrence of the smallest element in an array.
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int len=sc.nextInt();
+        sc.nextLine();
+        String s=sc.nextLine();
+        String[] str=s.split(" ");
+        int[] num=new int[len];
+        int min=Integer.MAX_VALUE;
+        int count=0;
+        for(String ss:str){
+            int a=Integer.parseInt(ss);
+            if(a<min){
+                count=1;
+                min=a;
+            }
+            else if(a==min){
+                count++;
+            }
+        }
+        System.out.println(min+"---"+count);
+    }
+}
+
+2.Write a program to find the occurrence of the largest element in an array.
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int len=sc.nextInt();
+        sc.nextLine();
+        String s=sc.nextLine();
+        String[] str=s.split(" ");
+        int[] num=new int[len];
+        int min=Integer.MIN_VALUE;
+        int count=0;
+        for(String ss:str){
+            int a=Integer.parseInt(ss);
+            if(a>min){
+                count=1;
+                min=a;
+            }
+            else if(a==min){
+                count++;
+            }
+        }
+        System.out.println(min+"---"+count);
+    }
+}
+

@@ -1,0 +1,285 @@
+-------------949. Largest Time for Given Digits-------------
+
+Given an array arr of 4 digits, find the latest 24-hour time that can be made using each digit exactly once.
+24-hour times are formatted as "HH:MM", where HH is between 00 and 23, and MM is between 00 and 59. The earliest 24-hour time is 00:00, and the latest is 23:59.
+Return the latest 24-hour time in "HH:MM" format. If no valid time can be made, return an empty string.
+Example 1:
+
+Input: arr = [1,2,3,4]
+Output: "23:41"
+Explanation: The valid 24-hour times are "12:34", "12:43", "13:24", "13:42", "14:23", "14:32", "21:34", "21:43", "23:14", and "23:41". Of these times, "23:41" is the latest.
+Example 2:
+
+Input: arr = [5,5,5,5]
+Output: ""
+Explanation: There are no valid 24-hour times as "55:55" is not valid.
+
+
+class Solution {
+    public String largestTimeFromDigits(int[] arr) {
+        int hours=-1;
+        int min=-1;
+
+        boolean[] freq=new boolean[arr.length];
+        List<List<Integer>> st=new ArrayList<>();
+        st=func(arr,new ArrayList<>(), new ArrayList<>(),freq);
+        for(List<Integer> l:st){
+            String h=l.get(0)+""+l.get(1);
+            String m=l.get(2)+""+l.get(3);
+
+            int a=Integer.parseInt(h);
+            int b=Integer.parseInt(m);
+           
+            if(a>23 || b>59){
+                continue;
+            }
+            else{
+                if(a>hours){
+                    hours=a;
+                    min=b;
+                }
+                else if(a==hours){
+                    if(b>min){
+                        min=b;
+                    }
+                }
+            }
+
+        }
+        
+            if(hours==-1){
+                return "";
+            }
+            String hh="";
+            String mm="";
+            if(hours<10 && hours>-1){
+                hh="0"+hours;
+            }
+            else{
+                hh=String.valueOf(hours);
+            }
+
+            if(min<9 && min>-1){
+                mm="0"+min;
+            }
+            else{
+                mm=String.valueOf(min);
+            }
+            return hh+":"+mm;
+    }
+
+    public static List<List<Integer>> func(int[] arr,List<Integer> lst, List<List<Integer>> store, boolean[] freq){
+        if(lst.size()==arr.length){
+            if(!store.contains(lst)){
+            store.add(new ArrayList<>(lst));
+            return store;
+        }}
+        for(int i=0;i<arr.length;i++){
+            if(!freq[i]){
+                lst.add(arr[i]);
+                freq[i]=true;
+                func(arr,lst,store,freq);
+                lst.remove(lst.size()-1);
+                freq[i]=false;
+            }
+        }
+        return store;
+    }
+}
+
+
+
+
+
+-------------------------2698. Find the Punishment Number of an Integer------------------------------------
+
+Given a positive integer n, return the punishment number of n.
+
+The punishment number of n is defined as the sum of the squares of all integers i such that:
+
+1 <= i <= n
+The decimal representation of i * i can be partitioned into contiguous substrings such that the sum of the integer values of these substrings equals i.
+ 
+
+Example 1:
+
+Input: n = 10
+Output: 182
+Explanation: There are exactly 3 integers i in the range [1, 10] that satisfy the conditions in the statement:
+- 1 since 1 * 1 = 1
+- 9 since 9 * 9 = 81 and 81 can be partitioned into 8 and 1 with a sum equal to 8 + 1 == 9.
+- 10 since 10 * 10 = 100 and 100 can be partitioned into 10 and 0 with a sum equal to 10 + 0 == 10.
+Hence, the punishment number of 10 is 1 + 81 + 100 = 182
+Example 2:
+
+Input: n = 37
+Output: 1478
+Explanation: There are exactly 4 integers i in the range [1, 37] that satisfy the conditions in the statement:
+- 1 since 1 * 1 = 1. 
+- 9 since 9 * 9 = 81 and 81 can be partitioned into 8 + 1. 
+- 10 since 10 * 10 = 100 and 100 can be partitioned into 10 + 0. 
+- 36 since 36 * 36 = 1296 and 1296 can be partitioned into 1 + 29 + 6.
+Hence, the punishment number of 37 is 1 + 81 + 100 + 1296 = 1478
+
+
+
+class Solution {
+    public int punishmentNumber(int n) {
+        int sum=1;
+        for(int i=9;i<=n;i++){
+
+            String s=String.valueOf(i*i);
+            if(check(s,i,0)){
+                sum+=i*i;
+            }
+        }
+        return sum;
+    }
+
+    public static boolean check(String num, int square, int idx){
+        if(idx==num.length()){
+            return square==0;
+        }
+        int count=0;
+        for(int k=idx;k<num.length();k++){
+            count=count*10+(num.charAt(k)-'0');
+
+            if(check(num,square-count,k+1)){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+------------------You are given a circular array nums and an array queries-----------------------------------
+
+For each query i, you have to find the following:
+
+The minimum distance between the element at index queries[i] and any other index j in the circular array, where nums[j] == nums[queries[i]]. If no such index exists, the answer for that query should be -1.
+Return an array answer of the same size as queries, where answer[i] represents the result for query i.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,1,4,1,3,2], queries = [0,3,5]
+
+Output: [2,-1,3]
+
+Explanation:
+
+Query 0: The element at queries[0] = 0 is nums[0] = 1. The nearest index with the same value is 2, and the distance between them is 2.
+Query 1: The element at queries[1] = 3 is nums[3] = 4. No other index contains 4, so the result is -1.
+Query 2: The element at queries[2] = 5 is nums[5] = 3. The nearest index with the same value is 1, and the distance between them is 3 (following the circular path: 5 -> 6 -> 0 -> 1).
+Example 2:
+
+Input: nums = [1,2,3,4], queries = [0,1,2,3]
+
+Output: [-1,-1,-1,-1]
+
+Explanation:
+
+Each value in nums is unique, so no index shares the same value as the queried element. This results in -1 for all queries.
+
+
+
+
+class Solution {
+    public List<Integer> solveQueries(int[] nums, int[] queries) {
+        List<Integer> lst=new ArrayList<>();
+        for(int i=0;i<queries.length;i++){
+            int tar=nums[queries[i]];
+            int a=func(nums,queries[i],tar);
+            lst.add(a);
+        }
+        return lst;
+    }
+    public static int func(int[] nums,int i, int tar){
+        int dist=Integer.MAX_VALUE;
+        int min=Integer.MAX_VALUE;;
+        for(int k=i+1;k<nums.length*2;k++){
+            int id=k%nums.length;
+            if(id==i) continue;
+
+            if(nums[id]==tar){
+                dist=Math.abs(i-id);
+                int circ=Math.min(dist,nums.length-dist);
+                min=Math.min(min,circ);
+            }
+        }
+        if(min==Integer.MAX_VALUE) return -1; 
+        return min;
+    }
+}
+
+
+
+------------------------------------IP address problem---------------------------------
+A valid IP address consists of exactly four integers separated by single dots. Each integer is between 0 and 255 (inclusive) and cannot have leading zeros.
+
+For example, "0.1.2.201" and "192.168.1.1" are valid IP addresses, but "0.011.255.245", "192.168.1.312" and "192.168@1.1" are invalid IP addresses.
+Given a string s containing only digits, return all possible valid IP addresses that can be formed by inserting dots into s. You are not allowed to reorder or remove any digits in s. You may return the valid IP addresses in any order.
+
+ 
+
+Example 1:
+
+Input: s = "25525511135"
+Output: ["255.255.11.135","255.255.111.35"]
+Example 2:
+
+Input: s = "0000"
+Output: ["0.0.0.0"]
+Example 3:
+
+Input: s = "101023"
+Output: ["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"]
+
+
+
+
+class Solution {
+    public List<String> restoreIpAddresses(String s) {
+        List<List<Integer>> st=new ArrayList<>();
+        List<String> out=new ArrayList<>();
+        st=func(s,new ArrayList<>(),new ArrayList<>(),0);
+
+        for(List<Integer> ls:st){
+            if(ls.get(0)>255) continue;
+            if(ls.get(1)>255) continue;
+            if(ls.get(2)>255) continue;
+            if(ls.get(3)>255) continue;
+
+            String ou=ls.get(0)+"."+ls.get(1)+"."+ls.get(2)+"."+ls.get(3);
+            out.add(ou);
+            
+        }
+        return out;
+    }
+
+    public static List<List<Integer>> func(String s, List<List<Integer>> store, List<Integer> lst, int  ind){
+        if(ind==s.length()){
+            if(lst.size()==4){
+                store.add(new ArrayList<>(lst));
+            }
+            return store;
+        }
+
+        for(int i=ind;i<s.length();i++){
+            String t=s.substring(ind,i+1);
+            if(t.length()>3) continue;
+            if (t.length() > 1 && t.charAt(0) == '0') continue;
+            int a=Integer.parseInt(t);
+            
+            lst.add(a);
+
+            func(s,store,lst,i+1);
+            lst.remove(lst.size()-1);
+
+        }
+        return store;
+    }
+}

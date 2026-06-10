@@ -1,0 +1,298 @@
+---------------Previous Smaller Element---------------
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       int[] num={5, 3, 8, 4, 2, 7, 1, 9, 6, 0, 11, 10, 13};
+       int[] pse=new int[num.length];
+       Stack<Integer> stk=new Stack<>();
+       for(int i=0;i<num.length;i++){
+           while(!stk.empty() && stk.peek()>=num[i]){
+               stk.pop();
+           }
+           if(stk.size()==0){
+               pse[i]=-1;
+           }
+           else{
+               pse[i]=stk.peek();
+           }
+          stk.push(num[i]);
+           
+       }
+       System.out.println(Arrays.toString(pse));
+    }
+}
+
+---------------Next Smaller Element---------------
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       int[] num={5, 3, 8, 4, 2, 7, 1, 9, 6, 0, 11, 10, 13};
+       int[] nse=new int[num.length];
+       Stack<Integer> stk=new Stack<>();
+       for(int i=num.length-1;i>-1;i--){
+           while(!stk.empty() && stk.peek()>=num[i]){
+               stk.pop();
+           }
+           if(stk.size()==0){
+               nse[i]=-1;
+           }
+           else{
+               nse[i]=stk.peek();
+           }
+          stk.push(num[i]);
+ 
+       }
+       System.out.println(Arrays.toString(nse));
+    }
+}
+
+---------------Previous Greater Element---------------
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       int[] num={5, 3, 8, 4, 2, 7, 1, 9, 6, 0, 11, 10, 13};
+       int[] pge=new int[num.length];
+       Stack<Integer> stk=new Stack<>();
+       for(int i=0;i<num.length;i++){
+           while(!stk.empty() && stk.peek()>=num[i]){
+               stk.pop();
+           }
+           if(stk.size()==0){
+               nse[i]=-1;
+           }
+           else{
+               pge[i]=stk.peek();
+           }
+          stk.push(num[i]);
+ 
+       }
+       System.out.println(Arrays.toString(pge));
+    }
+}
+
+
+---------------Next Greater Element---------------
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       int[] num={5, 3, 8, 4, 2, 7, 1, 9, 6, 0, 11, 10, 13};
+       int[] nge=new int[num.length];
+       Stack<Integer> stk=new Stack<>();
+       for(int i=0;i<num.length;i++){
+           while(!stk.empty() && stk.peek()<=num[i]){
+               stk.pop();
+           }
+           if(stk.size()==0){
+               nse[i]=-1;
+           }
+           else{
+               nge[i]=stk.peek();
+           }
+          stk.push(num[i]);
+           
+       }
+       System.out.println(Arrays.toString(nge));
+    }
+}
+
+
+-----------Sum of Sub array Minimums---------------
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] num = {3, 1, 2};
+        int n = num.length;
+
+        int[] pse = getPSE(num);
+        int[] nse = getNSE(num);
+
+        int sum = 0;
+
+        for(int i = 0; i < n; i++) {
+            sum += num[i] * (i - pse[i]) * (nse[i] - i);
+        }
+
+        System.out.println(sum);
+    }
+
+    // Previous Smaller Element
+    public static int[] getPSE(int[] num) {
+        int n = num.length;
+        int[] pse = new int[n];
+        Stack<Integer> stk = new Stack<>();
+
+        for(int i = 0; i < n; i++) {
+            while(!stk.isEmpty() && num[stk.peek()] > num[i]) {
+                stk.pop();
+            }
+
+            if(stk.isEmpty()) {
+                pse[i] = -1;
+            } else {
+                pse[i] = stk.peek();
+            }
+
+            stk.push(i);
+        }
+
+        return pse;
+    }
+
+    // Next Smaller Element
+    public static int[] getNSE(int[] num) {
+        int n = num.length;
+        int[] nse = new int[n];
+        Stack<Integer> stk = new Stack<>();
+
+        for(int i = n - 1; i >= 0; i--) {
+            while(!stk.isEmpty() && num[stk.peek()] >= num[i]) {
+                stk.pop();
+            }
+
+            if(stk.isEmpty()) {
+                nse[i] = n;
+            } else {
+                nse[i] = stk.peek();
+            }
+
+            stk.push(i);
+        }
+
+        return nse;
+    }
+}
+
+----------------------sum of sub array maximimums------------------------
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] num = {3, 1, 2, 4};
+        int n = num.length;
+
+        int[] pge = getPGE(num);
+        int[] nge = getNGE(num);
+
+        int sum = 0;
+
+        for(int i = 0; i < n; i++) {
+            sum += num[i] * (i - pge[i]) * (nge[i] - i);
+        }
+
+        System.out.println(sum);
+    }
+
+    // Previous Greater Element
+    public static int[] getPGE(int[] num) {
+        int n = num.length;
+        int[] pge = new int[n];
+        Stack<Integer> stk = new Stack<>();
+
+        for(int i = 0; i < n; i++) {
+            while(!stk.isEmpty() && num[stk.peek()] < num[i]) {
+                stk.pop();
+            }
+
+            if(stk.isEmpty()) {
+                pge[i] = -1;
+            } else {
+                pge[i] = stk.peek();
+            }
+
+            stk.push(i);
+        }
+
+        return pge;
+    }
+
+    // Next Greater Element
+    public static int[] getNGE(int[] num) {
+        int n = num.length;
+        int[] nge = new int[n];
+        Stack<Integer> stk = new Stack<>();
+
+        for(int i = n - 1; i >= 0; i--) {
+            while(!stk.isEmpty() && num[stk.peek()] <= num[i]) {
+                stk.pop();
+            }
+
+            if(stk.isEmpty()) {
+                nge[i] = n;
+            } else {
+                nge[i] = stk.peek();
+            }
+
+            stk.push(i);
+        }
+
+        return nge;
+    }
+}
+----------------------Circular Next Greater Element ------------------------
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] num={2,5,8,12,38,7,8,12,26};
+        int[] nge=new int[num.length];
+        Stack<Integer> stk=new Stack<>();
+        for(int i=0;i<num.length;i++){
+            if(num[i]>num[num.length-1]){
+                stk.push(num[i]);
+                break;
+            }
+        }
+        
+        for(int i=num.length-1;i>=0;i--){
+            while(!stk.empty() && stk.peek()<=num[i]){
+                stk.pop();
+            }
+            if(stk.empty()){
+                nge[i]=-1;
+            }
+            else{
+                nge[i]=stk.peek();
+            }
+                stk.push(num[i]);
+        }
+    System.out.println(Arrays.toString(nge));
+    }
+}
+----------------------Circular Next Smaller Element ------------------------
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] num={2,5,8,12,38,7,8,12,26};
+        int[] nse=new int[num.length];
+        Stack<Integer> stk=new Stack<>();
+        for(int i=0;i<num.length;i++){
+            if(num[i]<num[num.length-1]){
+                stk.push(num[i]);
+                break;
+            }
+        }
+        
+        for(int i=num.length-1;i>=0;i--){
+            while(!stk.empty() && stk.peek()>=num[i]){
+                stk.pop();
+            }
+            if(stk.empty()){
+                nge[i]=-1;
+            }
+            else{
+                nse[i]=stk.peek();
+            }
+                stk.push(num[i]);
+        }
+    System.out.println(Arrays.toString(nse));
+    }
+}
