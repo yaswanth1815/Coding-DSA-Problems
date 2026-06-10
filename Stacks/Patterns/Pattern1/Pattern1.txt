@@ -1,0 +1,17 @@
+finding the next greater element for an element in the array or list
+
+ex:
+
+arr={2,4,6,3,8,10,11,4}
+
+nge(2)=4
+nge(4)=6
+.
+.
+.
+.
+nge(10)=11
+nge(11)=NA so -1
+nge(4)=-1
+
+so nge_arrya={4,6,8,8,11,-1,-1}

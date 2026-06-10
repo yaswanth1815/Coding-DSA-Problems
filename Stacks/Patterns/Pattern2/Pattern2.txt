@@ -1,0 +1,17 @@
+finding the previous greater element for an element in the array or list
+
+ex:
+
+arr={2,4,6,3,8,10,11,4}
+
+pge(2)=-1
+pge(4)=-1
+.
+.
+.
+.
+pge(10)=-1
+pge(11)=-1
+pge(4)=11
+
+so pge_arrya={4,6,8,8,11,-1,-1}

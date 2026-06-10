@@ -1,0 +1,6 @@
+Finding next smaller element for an element in list or array
+
+ex:
+[1,4,6,2,11,5,8,9,12]
+
+nse_num=[-1,2,2,5,-1,-1,-1,-1]
