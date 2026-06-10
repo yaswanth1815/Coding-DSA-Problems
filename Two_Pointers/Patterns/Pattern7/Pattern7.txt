@@ -1,0 +1,8 @@
+Number of subarrays with sum=k
+
+arr=[1,0,1,1,0,0,1]
+sum=2
+
+output:
+
+count of subarrays where sum=2

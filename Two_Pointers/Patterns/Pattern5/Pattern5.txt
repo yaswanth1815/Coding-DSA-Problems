@@ -1,0 +1,8 @@
+Longest substring with n replacements
+
+string="helloworldhowareyou"
+k=3(3 replacements allowed)
+
+output=
+
+longest substring where we can allow 3 repetetions

@@ -1,0 +1,7 @@
+Number of substrings contains all given characters
+
+ex:"abcabc"
+characters=['a','b','c']
+
+output:
+total substrings=
