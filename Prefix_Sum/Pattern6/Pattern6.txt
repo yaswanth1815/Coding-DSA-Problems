@@ -1,0 +1,5 @@
+Print subarrays with sum=k
+
+ex:
+array={1,0,1,4,2,-2,-4,5}
+k=5

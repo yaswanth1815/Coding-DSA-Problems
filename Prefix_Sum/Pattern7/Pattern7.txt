@@ -1,0 +1,15 @@
+Count number of subarrays having sum of elements equals to k
+
+arr={-1,0,1,4,2,-2,-4,5}
+target=5
+
+output:
+7
+
+[0, 1, 4]
+[1, 4]
+[0, 1, 4, 2, -2]
+[1, 4, 2, -2]
+[-1, 0, 1, 4, 2, -2, -4, 5]
+[4, 2, -2, -4, 5]
+[5]

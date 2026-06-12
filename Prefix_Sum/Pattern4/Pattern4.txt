@@ -1,0 +1,13 @@
+Count number of subarrays where sum of elements is equals to 0
+
+ex:
+[1,0,-1,4,2,-2,-4]
+
+subarrays:
+
+1,0,-1
+2,-2
+4,2,-2,-4
+1,0,-1,4,2,-2,-4
+
+so count=3

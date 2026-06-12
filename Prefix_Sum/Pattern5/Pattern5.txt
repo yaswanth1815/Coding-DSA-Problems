@@ -1,0 +1,6 @@
+Longest subarray with sum=0
+
+lst=[1,0,-1,4,2,-2,-4]
+output:
+
+[1,0,-1,4,2,-2,-4]
