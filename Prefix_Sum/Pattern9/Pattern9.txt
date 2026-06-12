@@ -1,0 +1,14 @@
+sub arrays with sum divisible by k
+
+array={1,0,1,4,2,-2,-4,5}
+
+subarrays whose sum is divisible by k
+[0]
+[0, 1, 4]
+[1, 4]
+[0, 1, 4, 2, -2]
+[1, 4, 2, -2]
+[2, -2]
+[4, 2, -2, -4]
+[4, 2, -2, -4, 5]
+[5]
