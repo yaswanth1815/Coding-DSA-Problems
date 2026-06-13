@@ -1,0 +1,12 @@
+probelm description:
+
+1.we have given a list
+2.maximum value of a subarray of given size
+
+ex:
+[12,3,4,2,21,11,45,23,22,56]
+k=4
+
+[12,3,4,2]=21=sum
+
+[3,4,2,21]=30=sum
