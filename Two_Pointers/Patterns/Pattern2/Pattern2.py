@@ -4,7 +4,7 @@ left=0
 right=0
 summ=0
 maxx=0
-while(right<len(nums)):
+while right<len(nums) and right>=left:
     summ+=nums[right];
     while(summ>k):
         summ-=nums[left]

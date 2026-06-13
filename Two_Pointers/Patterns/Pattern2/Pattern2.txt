@@ -1,5 +1,38 @@
-Longest substring with some condition only positive values
+Length of longest subarray with some condition only positive values
 
 ex:
 [2,5,7,1,4,4,3,2,5]
 sum<=10
+
+3,2,5
+1,4,4
+
+target=10
+longest=0
+sum=0
+right=0
+left=0
+nums=[2,5,7,1,4,4,3,2,5]
+
+right=0
+left=0
+sum=sum+nums[0]=2
+2<=10
+longest=max(longest,right-left+1)=1
+
+
+
+right=1
+left=0
+sum=sum+nums[1]->2+5->7
+7<=10
+longest=max(longest,right-left+1)=2
+
+right=2
+left=0
+sum=sum+num[2]->7+7->14
+
+14<=10
+
+
+
